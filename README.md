@@ -16,7 +16,8 @@
 </p>
 
 <p>
-<img src="./example_pic.jpg" width="100%">
+  <img src="https://img.shields.io/badge/v1.0-red">
+  <img src="./example_pic.jpg" width="100%">
 </p>
 
 
@@ -24,8 +25,8 @@
 
 <p>
   <img src="https://img.shields.io/badge/python-blue">
-  <img src="https://img.shields.io/badge/pyfiglet-blueviolet">
-  <img src="https://img.shields.io/badge/requests-blueviolet">
+  <img src="https://img.shields.io/badge/pyfiglet-green">
+  <img src="https://img.shields.io/badge/requests-orange">
 </p>
 
 
