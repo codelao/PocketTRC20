@@ -31,4 +31,5 @@
 
 ## Usage
 
-- You just need to enter any USDT transaction hash based on TRC20 network and here it is (I usually search for TRC20 hashes on [this](https://tronscan.org/#/) site)
+- CryptoScans is a console based crypto transactions scanner based on TRONSCAN API
+- You just need to enter any USDT transaction hash based on TRC20 network and here it is (I usually search for TRC20 hashes on the [TRONSCAN](https://tronscan.org/#/) site)
