@@ -12,12 +12,12 @@
 <p align="center">
   <a href="#requirements">Requirements</a> •
   <a href="#usage">Usage</a> •
-  <a href="https://github.com/codelao/CryptoScans/tree/main/exe">exe</a>
+  <a href="https://www.mediafire.com/file/f63u4nhcz9g2ftx/CryptoScans_1.1.0.exe/file">Download</a>
 </p>
 
 <p>
-  <img src="https://img.shields.io/badge/v1.0-red">
-  <img src="./example_pic.jpg" width="100%">
+  <img src="https://img.shields.io/badge/CryptoScans-v1.1.0-red">
+  <img src="./example_pic 1.1.0.jpg" width="100%">
 </p>
 
 
