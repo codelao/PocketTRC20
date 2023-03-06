@@ -6,7 +6,6 @@
   CryptoScans
 </h1>
 
-
 <h3 align="center">
   Crypto transactions explorer by <a href="https://github.com/codelao">Code Lao</a>
 </h3>
