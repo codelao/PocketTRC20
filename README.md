@@ -23,6 +23,8 @@
   </a>
 </p>
 
+
+## Screenshots
 <p>
   <img src="https://img.shields.io/badge/CryptoScans-v1.1.0-red">
   <img src="./example_pic 1.1.0.jpg" width="100%">
