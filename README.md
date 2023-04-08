@@ -1,43 +1,40 @@
 <p align="center">
-  <img src="./logo.png" width="35%">
+  <img src="./logo.png" width="75%">
 </p>
 
 <h1 align="center">
-  CryptoScans
+  Crypto Scans
 </h1>
 
-<h3 align="center">
-  Crypto transactions explorer by <a href="https://github.com/codelao">Code Lao</a>
-</h3>
-
-<p align="center">
-  <a href="#requirements">
-    Requirements
-  </a> •
-  <a href="#usage">
-    Usage
-  </a> •
-  <a href="https://www.mediafire.com/file/f63u4nhcz9g2ftx/CryptoScans_1.1.0.exe/file">
-    Download
-  </a>
-</p>
+* [More info](#more-info)
+* [Installation](#installation)
+* [Usage](#usage)
 
 
 ## Screenshots
 <p>
-  <img src="https://img.shields.io/badge/CryptoScans-v1.1.0-red">
-  <img src="./example_pic 1.1.0.jpg" width="100%">
+  <img src="https://img.shields.io/badge/Crypto Scans-v1.2.0-red">
+  <img src="./example.png" width="100%">
 </p>
 
 
-## Requirements
-<p>
-  <img src="https://img.shields.io/badge/python-blue">
-  <img src="https://img.shields.io/badge/pyfiglet-green">
-  <img src="https://img.shields.io/badge/requests-orange">
-</p>
+## More info
+Crypto Scans is a console-based TRON blockchain explorer app
+It is used for getting information about TRC20 transactions right through your PC's terminal
 
 
+## Installation
+*Note: you need to have Python installed in your system before moving to the next step*
+```
+$ git clone https://github.com/codelao/CryptoScans.git
+$ cd CryptoScans
+$ pip install -r requirements.txt
+$ cd code
+$ python main.py
+```
+*Note: if the last command doesn't work, run:*
+```
+$ python3 main.py
+```
 ## Usage
-- CryptoScans is a console-based crypto transactions explorer based on TronScan API
-- You just need to enter any USDT transaction hash based on TRC20 network and here it is (I usually search for TRC20 hashes on the [TronScan](https://tronscan.org/#/) website)
+After running Crypto Scans you can enter any TRC20 transaction hash in the terminal window and you will get the details of this transaction

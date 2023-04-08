@@ -1,3 +1,14 @@
+# 1.2.0
+*2023-04-09*
+
+### Edited
+- Code structure
+### Fixed
+- Bug with transaction amount
+### Added
+- Transaction scanning progress bar
+
+
 # 1.1.0
 *2023-02-08*
 
