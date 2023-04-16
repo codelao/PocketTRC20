@@ -13,14 +13,16 @@
 
 ## Screenshots
 <p>
-  <img src="https://img.shields.io/badge/Crypto Scans-v1.2.0-red">
-  <img src="./example.png" width="100%">
+  <img src="https://img.shields.io/badge/Crypto Scans-v1.2.1-red">
+  <img src="./screenshot1.png" width="100%">
+  <img src="./screenshot2.png" width="100%">
+  <img src="./screenshot3.png" width="100%">
 </p>
 
 
 ## More info
-Crypto Scans is a console-based TRON blockchain explorer app
-It is used for getting information about TRC20 transactions right through your PC's terminal
+Crypto Scans is a console based TRON blockchain explorer app
+It is used for getting details of TRC20 transactions through your computer's terminal
 
 
 ## Installation
@@ -28,13 +30,11 @@ It is used for getting information about TRC20 transactions right through your P
 ```
 $ git clone https://github.com/codelao/CryptoScans.git
 $ cd CryptoScans
-$ pip install -r requirements.txt
+$ pip3 install -r requirements.txt
 $ cd code
-$ python main.py
-```
-*Note: if the last command doesn't work, run:*
-```
 $ python3 main.py
 ```
+
+
 ## Usage
 After running Crypto Scans you can enter any TRC20 transaction hash in the terminal window and you will get the details of this transaction

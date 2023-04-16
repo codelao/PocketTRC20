@@ -18,6 +18,7 @@ import json
 import time
 import sys
 import colorama
+from urllib.request import urlopen
 from pyfiglet import figlet_format
 from termcolor import colored, cprint
 from progress.bar import IncrementalBar
@@ -25,12 +26,20 @@ from progress.bar import IncrementalBar
 
 class App:
     def __init__(self):
+        self.check_internet_connection()
         self.main()
+
+    def check_internet_connection(self):
+        try:
+            urlopen('https://google.com')
+            return True
+        except:
+            return False
 
     def main(self):
         colorama.init()
         cprint(figlet_format('Crypto Scans', 'speed'), 'green')
-        self.hash = input(colored('Enter USDT or TRX transaction hash (TRC20)\nMore info - /info\n', 'green'))
+        self.hash = input(colored('Enter TRC20 transaction hash\nMore info - /info\n', 'blue'))
         if self.hash == '/info':
             self.info = input(colored('Crypto Scans\n', 'green') + colored('by Lao\n', 'yellow') + colored('GitHub repository: https://github.com/codelao/CryptoScans\n', 'green') + colored('Go back?(yes/no)\n', 'blue'))
             if self.info == 'yes':
@@ -40,7 +49,7 @@ class App:
             else:
                 print(colored('Unknown command', 'red'))
                 time.sleep(1)
-                sys.exit()
+                self.main()
         elif not len(self.hash) == 64:
             self.wrong_hash = input(colored('Incorrect hash\nTry again?(yes/no)\n', 'red'))
             if self.wrong_hash == 'yes':
@@ -50,117 +59,127 @@ class App:
             else:
                 print(colored('Unknown command', 'red'))
                 time.sleep(1)
-                sys.exit()
+                self.main()
         else:
-            self.bar = IncrementalBar(colored('Scanning transaction', 'blue'), max=8, suffix='%(percent)d%%')
-            self.link = 'https://apilist.tronscan.org/api/transaction-info?hash=' + self.hash
-            self.get_link = requests.get(self.link).text
-            self.bar.next()
-            self.check_hash = json.loads(self.get_link)
-            self.bar.next()
-            if self.check_hash == {} or self.check_hash == {"message":"some parameters are missing"}:
-                self.bar.finish()
-                self.invalid_msg = input(colored('Unable to get information about this hash\nTry again?(yes/no)\n', 'red'))
-                if self.invalid_msg == 'yes':
-                    self.main()
-                elif self.invalid_msg == 'no':
-                    sys.exit()
-                else:
-                    print(colored('Unknown command', 'red'))
-                    time.sleep(1)
-                    sys.exit()
-            else:
-                self.token_check = self.check_hash["contractType"]
+            if self.check_internet_connection() == True:
+                self.bar = IncrementalBar(colored('Scanning transaction', 'blue'), max=7, suffix='%(percent)d%%')
+                self.link = 'https://apilist.tronscan.org/api/transaction-info?hash=' + self.hash
+                self.get_link = requests.get(self.link).text
                 self.bar.next()
-                if self.token_check == 31:
-                    self.usdt_status = self.check_hash["contractRet"]
-                    self.bar.next()
-                    if self.usdt_status == 'SUCCESS':
-                        self.from_address_usdt = self.check_hash["tokenTransferInfo"]["from_address"]
-                        self.bar.next()
-                        self.to_address_usdt = self.check_hash["tokenTransferInfo"]["to_address"]
-                        self.bar.next()
-                        self.amount_usdt = self.check_hash["tokenTransferInfo"]["amount_str"]
-                        self.bar.next()
-                        self.token_usdt = 'USDT'
-                        self.type_usdt = 'TRC20'
-                        self.bar.next()
-                        self.bar.finish()
-                        print(colored('Transaction details:', 'blue') +
-                        colored('\nStatus: ', 'yellow') + colored(self.usdt_status, 'green') +
-                        colored('\nFrom: ', 'yellow') + colored(self.from_address_usdt, 'green') +
-                        colored('\nTo: ', 'yellow') + colored(self.to_address_usdt, 'green') +
-                        colored('\nAmount: ', 'yellow') + colored(str(self.amount_usdt)[0:-6], 'green') +
-                        colored('\nToken: ', 'yellow') + colored(self.token_usdt, 'green') +
-                        colored('\nType: ', 'yellow') + colored(self.type_usdt, 'green') +
-                        colored('\nReturning in 30 seconds...', 'red')
-                        )
-                        time.sleep(30)
-                        self.main()
-                    else:
-                        self.bar.finish()
-                        self.failed_usdt = input(colored('Failed transaction', 'red') +
-                        colored('\nStatus: ', 'yellow') + colored(self.usdt_status, 'green') +
-                        colored('\nTry again?(yes/no)\n', 'red')
-                        )
-                        if self.failed_usdt == 'yes':
-                            self.main()
-                        elif self.failed_usdt == 'no':
-                            sys.exit()
-                        else:
-                            print(colored('Unknown command', 'red'))
-                            time.sleep(1)
-                            sys.exit()
-                elif self.token_check == 1:
-                    self.trx_status = self.check_hash["contractRet"]
-                    self.bar.next()
-                    if self.trx_status == 'SUCCESS':
-                        self.from_address_trx = self.check_hash["contractData"]["owner_address"]
-                        self.bar.next()
-                        self.to_address_trx = self.check_hash["contractData"]["to_address"]
-                        self.bar.next()
-                        self.amount_trx = self.check_hash["contractData"]["amount"]
-                        self.bar.next()
-                        self.token_trx = 'TRX'
-                        self.type_trx = 'TRC20'
-                        self.bar.next()
-                        self.bar.finish()
-                        print(colored('Transaction details:', 'blue') +
-                        colored('\nStatus: ', 'yellow') + colored(self.trx_status, 'green') +
-                        colored('\nFrom: ', 'yellow') + colored(self.from_address_trx, 'green') +
-                        colored('\nTo: ', 'yellow') + colored(self.to_address_trx, 'green') +
-                        colored('\nAmount: ', 'yellow') + colored(str(self.amount_trx)[0:-6], 'green') +
-                        colored('\nToken: ', 'yellow') + colored(self.token_trx, 'green') +
-                        colored('\nType: ', 'yellow') + colored(self.type_trx, 'green') +
-                        colored('\nReturning in 30 seconds...', 'red')
-                        )
-                        time.sleep(30)
-                        self.main()
-                    else:
-                        self.bar.finish()
-                        self.failed_trx = input(colored('Failed transaction', 'red') +
-                        colored('\nStatus: ', 'yellow') + colored(self.trx_status, 'green') +
-                        colored('\nTry again?(yes/no)\n', 'red')
-                        )
-                        if self.failed_trx == 'yes':
-                            self.main()
-                        elif self.failed_trx == 'no':
-                            sys.exit()
-                        else:
-                            print(colored('Unknown command', 'red'))
-                            time.sleep(1)
-                            sys.exit()
-                else:
+                self.check_hash = json.loads(self.get_link)
+                self.bar.next()
+                if self.check_hash == {} or self.check_hash == {"message":"some parameters are missing"}:
                     self.bar.finish()
-                    self.invalid_msg = input(colored('Unable to get information about this transaction\nTry again?(yes/no)\n', 'red'))
-                    if self.invalid_msg == 'yes':
+                    self.hash_error = input(colored('Unable to get details of this transaction\nTry again?(yes/no)\n', 'red'))
+                    if self.hash_error == 'yes':
                         self.main()
-                    elif self.invalid_msg == 'no':
+                    elif self.hash_error == 'no':
                         sys.exit()
                     else:
                         print(colored('Unknown command', 'red'))
                         time.sleep(1)
-                        sys.exit()
+                        self.main()
+                else:
+                    self.token_check = self.check_hash["contractType"]
+                    self.bar.next()
+                    if self.token_check == 31:
+                        self.usdt_status = self.check_hash["contractRet"]
+                        self.bar.next()
+                        if self.usdt_status == 'SUCCESS':
+                            self.from_address_usdt = self.check_hash["tokenTransferInfo"]["from_address"]
+                            self.bar.next()
+                            self.to_address_usdt = self.check_hash["tokenTransferInfo"]["to_address"]
+                            self.bar.next()
+                            self.amount_usdt = self.check_hash["tokenTransferInfo"]["amount_str"]
+                            self.bar.next()
+                            self.bar.finish()
+                            self.result_usdt = input(colored('Transaction details:', 'blue') +
+                            colored('\nStatus: ', 'yellow') + colored(self.usdt_status, 'green') +
+                            colored('\nFrom: ', 'yellow') + colored(self.from_address_usdt, 'green') +
+                            colored('\nTo: ', 'yellow') + colored(self.to_address_usdt, 'green') +
+                            colored('\nAmount: ', 'yellow') + colored(str(self.amount_usdt)[0:-6] + ' USDT', 'green') +
+                            colored('\nGo back?(yes/no)\n', 'blue')
+                            )
+                            if self.result_usdt == 'yes':
+                                self.main()
+                            elif self.result_usdt == 'no':
+                                sys.exit()
+                            else:
+                                print(colored('Unknown command', 'red'))
+                                time.sleep(1)
+                                self.main()
+                        else:
+                            self.bar.finish()
+                            self.failed_usdt = input(colored('Transaction details:', 'blue') +
+                            colored('\nStatus: ', 'yellow') + colored(self.usdt_status, 'red') +
+                            colored('\nAmount: ', 'yellow') + colored('0 USDT', 'red') +
+                            colored('\nGo back?(yes/no)\n', 'blue')
+                            )
+                            if self.failed_usdt == 'yes':
+                                self.main()
+                            elif self.failed_usdt == 'no':
+                                sys.exit()
+                            else:
+                                print(colored('Unknown command', 'red'))
+                                time.sleep(1)
+                                self.main()
+                    elif self.token_check == 1:
+                        self.trx_status = self.check_hash["contractRet"]
+                        self.bar.next()
+                        if self.trx_status == 'SUCCESS':
+                            self.from_address_trx = self.check_hash["contractData"]["owner_address"]
+                            self.bar.next()
+                            self.to_address_trx = self.check_hash["contractData"]["to_address"]
+                            self.bar.next()
+                            self.amount_trx = self.check_hash["contractData"]["amount"]
+                            self.bar.next()
+                            self.bar.finish()
+                            self.result_trx = input(colored('Transaction details:', 'blue') +
+                            colored('\nStatus: ', 'yellow') + colored(self.trx_status, 'green') +
+                            colored('\nFrom: ', 'yellow') + colored(self.from_address_trx, 'green') +
+                            colored('\nTo: ', 'yellow') + colored(self.to_address_trx, 'green') +
+                            colored('\nAmount: ', 'yellow') + colored(str(self.amount_trx)[0:-6] + ' TRX', 'green') +
+                            colored('\nGo back?(yes/no)\n', 'blue')
+                            )
+                            if self.result_trx == 'yes':
+                                self.main()
+                            elif self.result_trx == 'no':
+                                sys.exit()
+                            else:
+                                print(colored('Unknown command', 'red'))
+                                time.sleep(1)
+                                self.main()
+                        else:
+                            self.bar.finish()
+                            self.failed_trx = input(colored('Transaction details:', 'blue') +
+                            colored('\nStatus: ', 'yellow') + colored(self.trx_status, 'red') +
+                            colored('\nAmount: ', 'yellow') + colored('0 TRX', 'red') +
+                            colored('\nGo back?(yes/no)\n', 'blue')
+                            )
+                            if self.failed_trx == 'yes':
+                                self.main()
+                            elif self.failed_trx == 'no':
+                                sys.exit()
+                            else:
+                                print(colored('Unknown command', 'red'))
+                                time.sleep(1)
+                                self.main()
+                    else:
+                        self.bar.finish()
+                        self.token_error = input(colored('Unable to get details of this transaction\nTry again?(yes/no)\n', 'red'))
+                        if self.token_error == 'yes':
+                            self.main()
+                        elif self.token_error == 'no':
+                            sys.exit()
+                        else:
+                            print(colored('Unknown command', 'red'))
+                            time.sleep(1)
+                            self.main()
+            else:
+                print(colored('Check your internet connection', 'red'))
+                time.sleep(1)
+                sys.exit()
+
 
 if __name__ == '__main__':
     App()

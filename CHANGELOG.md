@@ -1,3 +1,10 @@
+# 1.2.1
+*2023-04-16*
+
+### Added internet connection check
+### Edited some parameters
+
+
 # 1.2.0
 *2023-04-09*
 
