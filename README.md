@@ -22,6 +22,7 @@
 
 ## More info
 Crypto Scans is a console based TRON blockchain explorer app
+
 It is used for getting details of TRC20 transactions through your computer's terminal
 
 
@@ -37,4 +38,4 @@ $ python3 main.py
 
 
 ## Usage
-After running Crypto Scans you can enter any TRC20 transaction hash in the terminal window and you will get the details of this transaction
+After running Crypto Scans you can enter any TRC20 transaction hash in the terminal window and you will get details of this transaction
