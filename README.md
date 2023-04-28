@@ -26,7 +26,6 @@ It is used for getting details of TRC20 transactions through your computer's ter
 
 
 ## Installation
-*Note: you need to have Python installed in your system before moving to the next step*
 ```
 $ git clone https://github.com/codelao/CryptoScans.git
 $ cd CryptoScans
