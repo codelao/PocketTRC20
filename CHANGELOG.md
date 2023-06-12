@@ -1,3 +1,10 @@
+# 2.0.0
+*2023-06-13*
+
+### NEW VERSION!
+### New scanning algorithm. Now you can scan any transaction by entering only 1 command (guide in the README).
+
+
 # 1.2.1
 *2023-04-16*
 

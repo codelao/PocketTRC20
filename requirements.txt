@@ -1,5 +1,0 @@
-requests
-colorama
-pyfiglet
-termcolor
-progress
