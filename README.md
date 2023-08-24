@@ -2,38 +2,19 @@
   Pocket TRC20
 </h1>
 <p align="center">
-  Console Tron Blockchain Scanner
+  PocketTRC20 is a Python TRON blockchain explorer which is used to get details of crypto transactions in the TRC20 network. It uses the official <a href="https://tronscan.org/#/">TRON API</a> for scanning transactions.
 </p>
 
+### [Project's wiki](https://github.com/codelao/PocketTRC20/wiki)
+**or:**
+`git clone https://github.com/codelao/PocketTRC20.wiki.git`
 
-* [More info](#more-info)
-* [Installation](#installation)
-
-
-## Screenshots
-<p>
-  <img src="app_images/ptrc20-scanning.png" width="100%">
-  <img src="app_images/ptrc20-info.png" width="100%">
-</p>
-
-
-## More info
-Pocket TRC20 is a console based TRON blockchain scanner.
-
-It is used for getting details of TRC20 transactions just by entering 1 command into the terminal
-
-
-## Installation
-### MacOS/Linux
-```
-$ git clone https://github.com/codelao/CryptoScans.git
-$ cd Pocket-TRC20
-```
-#### after that you can go to the information menu by using this command:
-```
-$ bash ptrc20.sh --info
-```
-#### or you can start scanning transactions by using only 1 command:
-```
-$ bash ptrc20.sh --hash Trc20TransactionHash
-```
+#### Contents
+- [Home](https://github.com/codelao/PocketTRC20/wiki)
+  - [Welcome to PocketTRC20's wiki!](https://github.com/codelao/PocketTRC20/wiki#welcome-to-pockettrc20s-wiki)
+  - [Description](https://github.com/codelao/PocketTRC20/wiki#descriptio)
+- [Getting started](https://github.com/codelao/PocketTRC20/wiki/Getting-started)
+  - [Using PocketTRC20 as a console program](https://github.com/codelao/PocketTRC20/wiki/Getting-started#using-pockettrc20-as-a-console-program)
+  - [Using PocketTRC20 as a Python module](https://github.com/codelao/PocketTRC20/wiki/Getting-started#using-pockettrc20-as-a-python-module)
+- [Installation](https://github.com/codelao/PocketTRC20/wiki/Installation)
+  - [Install via pip](https://github.com/codelao/PocketTRC20/wiki/Installation#install-via-pip)

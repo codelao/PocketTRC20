@@ -1,18 +1,24 @@
-# 2.0.0
+# 1.0.0
+*2023-08-24*
+
+### PocketTRC20 is now available on [PyPI](https://pypi.org/project/PocketTRC20/)
+### Edited and improved code structure, added new functions, fixed some bugs.
+
+
+# 0.10.0
 *2023-06-13*
 
-### NEW VERSION!
-### New scanning algorithm. Now you can scan any transaction by entering only 1 command (guide in the README).
+### New scanning method. Now you can scan any transaction by entering only 1 command (guide in the README).
 
 
-# 1.2.1
+# 0.6.0
 *2023-04-16*
 
 ### Added internet connection check
 ### Edited some parameters
 
 
-# 1.2.0
+# 0.5.5
 *2023-04-09*
 
 ### Edited
@@ -23,19 +29,17 @@
 - Transaction scanning progress bar
 
 
-# 1.1.0
+# 0.5.0
 *2023-02-08*
 
+#### Bug fixing
 ### Added
 - TRX transactions scanner
 - Colored text in the terminal
-
-### Bug fixing
-
-### [CryptoScans](https://www.mediafire.com/file/f63u4nhcz9g2ftx/CryptoScans_1.1.0.exe/file) is now available at MediaFire!
+[CryptoScans](https://www.mediafire.com/file/f63u4nhcz9g2ftx/CryptoScans_1.1.0.exe/file) is now available at MediaFire!
 
 
-# 1.0.0
+# 0.0.1
 *2023-02-06*
 
 ### Hi
