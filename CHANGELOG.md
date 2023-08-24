@@ -1,7 +1,7 @@
 # 1.0.0
 *2023-08-24*
 
-### PocketTRC20 is now available on [PyPI](https://pypi.org/project/PocketTRC20/)
+### PocketTRC20 is now available on [PyPI](https://pypi.org/project/PocketTRC20/).
 ### Edited and improved code structure, added new functions, fixed some bugs.
 
 
