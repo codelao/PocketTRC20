@@ -14,7 +14,7 @@
   - [Welcome to PocketTRC20's wiki!](https://github.com/codelao/PocketTRC20/wiki#welcome-to-pockettrc20s-wiki)
     - [Description](https://github.com/codelao/PocketTRC20/wiki#description)
 - [Getting started](https://github.com/codelao/PocketTRC20/wiki/Getting-started)
-  - [Using PocketTRC20 as a console program](https://github.com/codelao/PocketTRC20/wiki/Getting-started#using-pockettrc20-as-a-console-program)
+  - [Using PocketTRC20 as a CLI app](https://github.com/codelao/PocketTRC20/wiki/Getting-started#using-pockettrc20-as-a-cli-app)
   - [Using PocketTRC20 as a Python module](https://github.com/codelao/PocketTRC20/wiki/Getting-started#using-pockettrc20-as-a-python-module)
 - [Installation](https://github.com/codelao/PocketTRC20/wiki/Installation)
   - [Install via pip](https://github.com/codelao/PocketTRC20/wiki/Installation#install-via-pip)

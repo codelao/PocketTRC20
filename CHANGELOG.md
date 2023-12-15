@@ -1,3 +1,10 @@
+# 1.0.5
+*2023-12-15*
+
+### Small improvements.
+### Added latest release check in the CLI mode.
+
+
 # 1.0.0
 *2023-08-24*
 

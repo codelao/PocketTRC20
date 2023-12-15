@@ -18,7 +18,3 @@
            #$$$$$$$$$$$$$$$$$
 
 from .scanner import transaction, status, amount
-
-
-NAME = 'PocketTRC20'
-VERSION = '1.2.5'

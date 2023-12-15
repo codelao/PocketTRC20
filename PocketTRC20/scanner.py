@@ -1,10 +1,10 @@
 import requests
 import json
-from .console import Scan
+from .__main__ import checkConnection
 
 
 def transaction(hash):
-    if Scan().check_intConnection() == True:
+    if checkConnection() == True:
         if not len(hash) == 64:
             raise ValueError('Incorrect hash entered.') 
         else:
