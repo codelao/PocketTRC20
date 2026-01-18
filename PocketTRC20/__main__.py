@@ -20,7 +20,7 @@
            #$$$$$$$$$$$$$$$$$
 
 import sys, colorama, requests
-from PocketTRC20.CLI import Scan
+from .CLI import Scan
 
 
 def checkConnection():

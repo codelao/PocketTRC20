@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import sys, time, requests, json
-from PocketTRC20.config import __version__
+from .config import __version__
 from progress.bar import IncrementalBar
 
 
