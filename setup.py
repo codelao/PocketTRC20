@@ -14,7 +14,7 @@ setup(
     long_description=long_description,
     long_description_content_type='text/markdown',
     author='Lao',
-    url='https://github.com/codelao/Pocket-TRC20',
+    url='https://github.com/codelao/PocketTRC20',
     license='MIT',
     install_requires=[
         'requests>=2.28.2', 'colorama>=0.4.6', 'progress>=1.6'
