@@ -20,7 +20,7 @@
            #$$$$$$$$$$$$$$$$$
 
 import sys, colorama, requests
-from .CLI import Scan
+from PocketTRC20.CLI import Scan
 
 
 def checkConnection():
@@ -56,5 +56,5 @@ def entry_point():
         sys.exit(1)
 
 
-if __name == "__main__":
+if __name__ == "__main__":
     entry_point()

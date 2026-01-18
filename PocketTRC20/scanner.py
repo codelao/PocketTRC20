@@ -1,6 +1,6 @@
 import requests
 import json
-from .__main__ import checkConnection
+from PocketTRC20.__main__ import checkConnection
 
 
 def transaction(hash):

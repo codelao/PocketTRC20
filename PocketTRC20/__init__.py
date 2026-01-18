@@ -17,6 +17,6 @@
    #$$$$$$$                  $$$$$$$$
            #$$$$$$$$$$$$$$$$$
 
-from .scanner import transaction, status, amount
+from PocketTRC20.scanner import transaction, status, amount
 
 __all__ = ["transaction","status","amount"]

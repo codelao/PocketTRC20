@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import sys, time, requests, json
-from .config import VERSION
+from PocketTRC20.config import __version__
 from progress.bar import IncrementalBar
 
 
@@ -15,15 +15,15 @@ class Scan():
 $                                      $
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 $  ____   ___   ____ _  _______ _____  $
-$ |  _ \ / _ \ / ___| |/ / ____|_   _| $
+$ |  _ \\ / _ \\ / ___| |/ / ____|_   _| $
 $ | |_) | | | | |   | ' /|  _|   | |   $
-$ |  __/| |_| | |___| . \| |___  | |   $
-$ |_|    \___/ \____|_|\_\_____| |_|   $
+$ |  __/| |_| | |___| . \\| |___  | |   $
+$ |_|    \\___/ \\____|_|\\_\\_____| |_|   $
 $    _____ ____   ____ ____   ___      $
-$   |_   _|  _ \ / ___|___ \ / _ \     $
+$   |_   _|  _ \\ / ___|___ \\ / _ \\     $
 $     | | | |_) | |     __) | | | |    $
 $     | | |  _ <| |___ / __/| |_| |    $
-$     |_| |_| \_|\____|_____|\___/     $
+$     |_| |_| \\_|\\____|_____|\\___/     $
 $                                      $
  $                                    $
   $               (..)               $
@@ -31,19 +31,19 @@ $                                      $
            $$$$$$$$$$$$$$$$$$
                  \033[1;34mby Lao\033[0m
         '''
-        print(banner + '         \033[34mv' + VERSION + '\033[0m')
+        print(banner + '         \033[34mv' + __version__ + '\033[0m')
 
     def check_latest_release(self):
         headers = {'Accept': 'application/vnd.github+json'}
         check_latest_release = requests.get('https://api.github.com/repos/codelao/PocketTRC20/releases/latest', headers=headers)
         if check_latest_release.status_code == 200:
             latest_release = json.loads(check_latest_release.text)
-            if not latest_release['tag_name'] == 'v'+VERSION:
+            if not latest_release['tag_name'] == 'v'+__version__:
                 return latest_release['tag_name']
 
     def hash_scanner(self, hash):
         if not self.check_latest_release() == None:
-            print('\033[32mNew PocketTRC20 release found!\033[0m\nInstalled release: v'+VERSION+'\nLatest: '+self.check_latest_release()+'\n\nVisit \033[96mhttps://github.com/codelao/PocketTRC20/releases/latest\033[0m.\n')
+            print('\033[32mNew PocketTRC20 release found!\033[0m\nInstalled release: v'+__version__+'\nLatest: '+self.check_latest_release()+'\n\nVisit \033[96mhttps://github.com/codelao/PocketTRC20/releases/latest\033[0m.\n')
         if not len(hash) == 64:
             print('\033[31m! Incorrect hash entered\033[0m')
             sys.exit(1)
