@@ -1,15 +1,19 @@
 import os
-from PocketTRC20.config import NAME, VERSION
 from setuptools import setup
 
 
 path = os.path.dirname(__file__)
-with open(path + '/README.md', 'r', encoding='utf-8') as f:
-    long_description = f.read()
+with open(path + '/README.md', 'r', encoding='utf-8') as readme:
+    long_description = readme.read()
+
+with open(path + '/PocketTRC20/config.py', 'r') as config:
+    contents = config.read()
+result = contents.split()
+__version__ = result[2][1:-1]
 
 setup(
-    name=NAME,
-    version=VERSION,
+    name="PocketTRC20",
+    version=__version__,
     description='Python TRON Blockchain Explorer',
     long_description=long_description,
     long_description_content_type='text/markdown',
