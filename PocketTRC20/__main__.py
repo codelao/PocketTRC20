@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
  #$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 #                                      $  
 #$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
@@ -52,3 +54,7 @@ def entry_point():
     else:
         print('\033[31m! Incorrect option\033[0m')
         sys.exit(1)
+
+
+if __name == "__main__":
+    entry_point()
