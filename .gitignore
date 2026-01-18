@@ -7,3 +7,5 @@
 
 **/Output/
 **/*.exe
+
+/PocketTRC20.egg-info
