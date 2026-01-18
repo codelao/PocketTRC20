@@ -12,7 +12,7 @@ result = contents.split()
 __version__ = result[2][1:-1]
 
 setup(
-    name="PocketTRC20",
+    name='PocketTRC20',
     version=__version__,
     description='Python TRON Blockchain Explorer',
     long_description=long_description,

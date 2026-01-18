@@ -1,11 +1,4 @@
 **/__pycache__/
 **/*.pyc
-
-**/build/
 **/dist/
-**/*.spec
-
-**/Output/
-**/*.exe
-
 /PocketTRC20.egg-info
