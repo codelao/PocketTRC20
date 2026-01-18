@@ -18,5 +18,3 @@
   - [Using PocketTRC20 as a Python module](https://github.com/codelao/PocketTRC20/wiki/Getting-started#using-pockettrc20-as-a-python-module)
 - [Installation](https://github.com/codelao/PocketTRC20/wiki/Installation)
   - [Install via pip](https://github.com/codelao/PocketTRC20/wiki/Installation#install-via-pip)
-
-### [Video tutorial](https://youtu.be/xzaSaq3DoK4)
